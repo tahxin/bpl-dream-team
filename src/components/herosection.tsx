@@ -5,33 +5,29 @@ import bannerShadow from '../assets/bg-shadow.png';
 const herosection = () => {
     return (
         <div className="relative w-full overflow-hidden">
-            <div className="absolute inset-0 bg-white opacity-20 pointer-events-none"></div>
+            <div className="absolute inset-0 z-0 bg-[#10251d]/88 pointer-events-none"></div>
             <div 
-                className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center px-4"
+                className="relative z-10 flex min-h-[560px] flex-col items-center justify-center bg-cover bg-center px-5 py-20 sm:min-h-[620px]"
                 style={{ backgroundImage: `url(${bannerShadow})` }}
             >
-                <div className="text-center space-y-6 animate-fade-in">
-                    <div className="mb-8">
-                        <img src={bannerMain} alt="banner main" className="h-32 md:h-40 mx-auto" />
+                <div className="max-w-4xl text-center">
+                    <div className="mb-6">
+                        <img src={bannerMain} alt="Cricket players celebrating" className="mx-auto h-28 object-contain sm:h-36" />
                     </div>
                     
-                    <div className="space-y-4">
-                        <h2 className='text-gray-900 text-4xl md:text-6xl font-bold leading-tight'>
-                            Assemble Your Ultimate
-                            <span className="block text-amber-600">
-                                Dream 11 Cricket Team
-                            </span>
-                        </h2>
-                        
-                        <p className='text-gray-700 text-lg md:text-2xl font-medium'>
-                            Beyond Boundaries, Beyond Limits
+                    <div>
+                        <h1 className='text-4xl font-black leading-[.96] tracking-[-0.055em] text-[#f6f4ee] sm:text-6xl md:text-7xl'>
+                            Pick the XI<br />that owns the night.
+                        </h1>
+                        <p className='mx-auto mt-5 max-w-xl text-base leading-7 text-white/70 sm:text-lg'>
+                            Spend your credits with intent, weigh the roles, and build a BPL side that feels like yours.
                         </p>
                     </div>
                     
-                    <div className="pt-4">
-                        <button className="btn px-8 py-3 bg-amber-500 hover:bg-amber-600 text-white font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 border-0 rounded-lg">
-                            Claim Free Credit
-                        </button>
+                    <div className="mt-8">
+                        <a href="#players" className="inline-flex min-h-12 items-center justify-center border border-[#b7dc55] bg-[#b7dc55] px-6 font-bold text-[#10251d] transition-colors hover:bg-transparent hover:text-[#b7dc55]">
+                            Start picking
+                        </a>
                     </div>
                 </div>
             </div>

@@ -39,16 +39,16 @@ export default function PlayerCards({ coins, setCoins }: PlayerCardsProps) {
     }, 0);
 
     return (
-        <section className="min-h-screen bg-white py-16">
+        <section id="players" className="bg-[#f6f4ee] py-18 sm:py-22">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 {/* Header Section */}
                 <div className="mb-12">
                     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-8">
         <div className="space-y-3">
-                            <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+                            <h2 id="squad" className="text-4xl font-black tracking-[-0.045em] text-[#10251d] md:text-5xl">
                                 {showSelected ? 'Your Squad' : 'Available Players'}
                             </h2>
-                            <p className="text-lg text-gray-600 max-w-md">
+                            <p className="mt-3 max-w-md text-base leading-7 text-[#547061]">
                                 {showSelected
                                     ? `You have selected ${selectedPlayerIds.length} player${selectedPlayerIds.length !== 1 ? 's' : ''} • Total: ${totalCost} coins`
                                     : "Choose your best cricketers to build an unbeatable team."
@@ -57,28 +57,28 @@ export default function PlayerCards({ coins, setCoins }: PlayerCardsProps) {
                         </div>
                         
                         {/* Toggle Buttons */}
-                        <div className="flex gap-3 self-start md:self-auto">
+                        <div className="flex self-start border border-[#10251d]/15 bg-white p-1 md:self-auto">
                             <button
                                 onClick={() => setShowSelected(false)}
-                                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg ${
+                                className={`px-5 py-2.5 text-sm font-bold transition-colors ${
                                     !showSelected
-                                        ? 'bg-gray-900 text-white'
-                                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                        ? 'bg-[#10251d] text-white'
+                                        : 'text-[#547061] hover:bg-[#edf0e8]'
                                 }`}
                             >
                                 Available
                             </button>
                             <button
                                 onClick={() => setShowSelected(true)}
-                                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:shadow-lg relative ${
+                                className={`relative px-5 py-2.5 text-sm font-bold transition-colors ${
                                     showSelected
-                                        ? 'bg-green-600 text-white'
-                                        : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                                        ? 'bg-[#10251d] text-white'
+                                        : 'text-[#547061] hover:bg-[#edf0e8]'
                                 }`}
                             >
                                 Selected
                                 {selectedPlayerIds.length > 0 && (
-                                    <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-6 w-6 flex items-center justify-center">
+                                    <span className="absolute -right-2 -top-2 grid h-5 w-5 place-items-center rounded-full bg-[#b7dc55] text-[10px] font-black text-[#10251d]">
                                         {selectedPlayerIds.length}
                                     </span>
                                 )}
@@ -88,7 +88,7 @@ export default function PlayerCards({ coins, setCoins }: PlayerCardsProps) {
                 </div>
 
                 {/* Player Grid */}
-                <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                <div className="grid gap-x-5 gap-y-7 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                     {displayedPlayers.length > 0 ? (
                         displayedPlayers.map((player) => (
                             <PlayerCard
